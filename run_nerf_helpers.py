@@ -7,10 +7,10 @@ import json
 
 
 # Misc utils
-
+@tf.function
 def img2mse(x, y): return tf.reduce_mean(tf.square(x - y))
 
-
+@tf.function
 def mse2psnr(x): return -10.*tf.log(x)/tf.log(10.)
 
 

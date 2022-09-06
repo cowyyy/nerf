@@ -403,6 +403,7 @@ def create_nerf(args):
         grad_vars += model_fine.trainable_variables
         models['model_fine'] = model_fine
 
+    @tf.function
     def network_query_fn(inputs, viewdirs, network_fn): return run_network(
         inputs, viewdirs, network_fn,
         embed_fn=embed_fn,
